@@ -6,11 +6,13 @@ public class Question {
     public String question;
     public String[] options;
     public int correctOption;
+    public int RoundQuestion;
 
-    public Question(String question, String[] options, int correctOption){
+    public Question(String question, String[] options, int correctOption,int RoundQuestion){
         this.question = question;
         this.options = options;
         this.correctOption = correctOption;
+        this.RoundQuestion = RoundQuestion;
     }
 
     public void printQuestion(){

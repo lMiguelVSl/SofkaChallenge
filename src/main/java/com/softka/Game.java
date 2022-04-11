@@ -36,23 +36,11 @@ public class Game {
         System.out.println("Game Over :(");
     }
 
-    public Round[] initializeGame(){
-        String[] options1 = {"Black","Blue","Red"};
-        Question question1 = new Question("What is your favorite color?", options1, 0);
-        String[] options2 = {"Medellin","Bogota"};
-        Question question2 = new Question("Which is the capital of Colombia?", options2,1);
-        Question[] questions = {question1, question2};
-        return null;
-    }
+
 
     public static void main(String[] args){
-        String[] options1 = {"Black","Blue","Red"};
-        Question question1 = new Question("What is your favorite color?", options1, 0);
-        String[] options2 = {"Medellin","Bogota"};
-        Question question2 = new Question("Which is the capital of Colombia?", options2,1);
-        Question[] questions = {question1, question2};
-        ////////////
-
+        
+        
         Player player = new Player("Miguel",1);
         SQLConnection connection = new SQLConnection("localhost",1433,"mavs","password");
         RoundDAO roundDao = new RoundDAO(connection);

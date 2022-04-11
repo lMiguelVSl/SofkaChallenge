@@ -3,6 +3,7 @@ package com.softka;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.LinkedList;
+import java.util.List;
 
 public class RoundDAO {
     SQLConnection connection;
@@ -26,7 +27,7 @@ public class RoundDAO {
                 /**
                  *  Question[] =  questionDao.getQuestionsFromRound(id);
                  */
-                Question[] questions = {};
+                List<Question> questions=  questionDao.getQuestionsFromRound(id);
                 Round round = new Round(questions, name, reward, id);
                 System.out.println(id+" "+name+" "+reward);
                 allRounds.push(round);
