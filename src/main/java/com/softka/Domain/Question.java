@@ -1,4 +1,4 @@
-package com.softka;
+package com.softka.Domain;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;

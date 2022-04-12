@@ -1,6 +1,9 @@
-package com.softka;
+package com.softka.DAO;
 
 import java.sql.Statement; //SELECT, UPDATE, DELETE, INSERT//sentencia SQL
+
+import com.softka.Domain.Player;
+
 import java.sql.ResultSet;
 
 public class PlayerDAO{

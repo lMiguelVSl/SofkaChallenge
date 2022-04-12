@@ -1,4 +1,4 @@
-package com.softka;
+package com.softka.Domain;
 
 import java.util.Random;
 import java.util.List;

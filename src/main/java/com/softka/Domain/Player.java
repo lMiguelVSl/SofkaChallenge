@@ -1,6 +1,9 @@
-package com.softka;
+package com.softka.Domain;
 
 import java.util.List;
+
+import com.softka.DAO.PlayerDAO;
+import com.softka.DAO.SQLConnection;
 
 public class Player {
     public String nickname;

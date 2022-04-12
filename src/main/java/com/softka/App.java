@@ -2,13 +2,19 @@ package com.softka;
 
 import java.util.List;
 
+import com.softka.DAO.RoundDAO;
+import com.softka.DAO.SQLConnection;
+import com.softka.Domain.Game;
+import com.softka.Domain.Player;
+import com.softka.Domain.Round;
+
 public class App {
     // MAIN DE LA APLICACIÓN
     public static void main(String[] args){ 
         SQLConnection connection = new SQLConnection("localhost",1433,"mavs","password"); //conexion con SQL
         
         //Insertamos el usuario nuevo o obtenemos el id del usuario si ya existe        
-        Player player = new Player("Alejandro",connection);
+        Player player = new Player("Miguel",connection);
         player.SaveUser();
 
         //Jugar un juego nuevo

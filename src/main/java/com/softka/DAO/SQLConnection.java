@@ -1,4 +1,4 @@
-package com.softka;
+package com.softka.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

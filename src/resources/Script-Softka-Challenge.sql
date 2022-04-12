@@ -9,6 +9,7 @@ accumulateReward int
 CREATE TABLE Game(
 IdGame INT IDENTITY(1,1) PRIMARY KEY,
 IdRondaActual INT NOT NULL,
+accumulateReward INT,
 IdJugador INT FOREIGN KEY REFERENCES Jugador(IdJugador),
 )
 

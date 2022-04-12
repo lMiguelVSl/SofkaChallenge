@@ -1,9 +1,12 @@
-package com.softka;
+package com.softka.DAO;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
+
+import com.softka.Domain.Question;
+import com.softka.Domain.Round;
 
 public class RoundDAO {
     SQLConnection connection;
