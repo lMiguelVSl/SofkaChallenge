@@ -1,1 +1,3 @@
 # SofkaChallenge
+
+Programa de juego
