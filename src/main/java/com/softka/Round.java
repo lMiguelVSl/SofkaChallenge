@@ -16,13 +16,13 @@ public class Round {
         this.name = name;
     }
 
-    public Question getQuestion(){
+    public Question getQuestion(){  //selecciono la pregunta de forma aleatoria
         
         Random random = new Random();
         int nQuestions = this.questions.size();
-        int randomIndex = Math.abs(random.nextInt(nQuestions));
-        Question selectedQuestion = this.questions.get(randomIndex);
-        return selectedQuestion;
+        int randomIndex = Math.abs(random.nextInt(nQuestions)); //valor absoluto para que no se generen random negativos 
+        Question selectedQuestion = this.questions.get(randomIndex); 
+        return selectedQuestion; //retorno la pregunta
     }
     
 }

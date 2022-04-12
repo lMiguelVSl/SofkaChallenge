@@ -9,39 +9,28 @@ public class RoundDAO {
     SQLConnection connection;
     QuestionDAO questionDao;
 
-    public RoundDAO(SQLConnection connection){
+    public RoundDAO(SQLConnection connection) {
         this.connection = connection;
         this.questionDao = new QuestionDAO(connection);
     }
 
-    public Round[] selectAll(){
-        String sqlQuery = "select * from Round_;";
-        LinkedList<Round> allRounds = new LinkedList<Round>();
-        try{
+    public List<Round> selectAll() {
+        String sqlQuery = "select * from Round_ ORDER BY IdRound"; //selecciono todo de la ronda ordenado en orden ascendente
+        List<Round> allRounds = new LinkedList<Round>(); //creo una lista allRound de tipo Round
+        try {
             Statement statement = this.connection.connection.createStatement();
             ResultSet results = statement.executeQuery(sqlQuery);
-            while(results.next()){
-                int id = results.getInt(1);
-                String name = results.getString(2);
-                int reward = results.getInt(3);
-                /**
-                 *  Question[] =  questionDao.getQuestionsFromRound(id);
-                 */
-                List<Question> questions=  questionDao.getQuestionsFromRound(id);
-                Round round = new Round(questions, name, reward, id);
-                System.out.println(id+" "+name+" "+reward);
-                allRounds.push(round);
+            while (results.next()) {
+                int id = results.getInt(1); //obtengo el id de la ronda
+                String name = results.getString(2); //obtengo el nivel de la ronda
+                int reward = results.getInt(3); //obtengo el reward perteneciente a esta ronda
+                List<Question> questions = questionDao.getQuestionsFromRound(id); //creo la lista questions de tipo Question para obtener las preguntas de este roun en especifico
+                Round round = new Round(questions, name, reward, id); //creo el objeto ronda
+                allRounds.add(round); //agrego en la lista allROunds la ronda generada
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        Round[] rounds = allRounds.toArray(new Round[0]);
-        return rounds;
-    }
-
-    public static void main(String[] args) {
-        SQLConnection connection = new SQLConnection("localhost",1433,"mavs","password");
-        RoundDAO dao = new RoundDAO(connection);
-        dao.selectAll();
+        return allRounds;
     }
 }
